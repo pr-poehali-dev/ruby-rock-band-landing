@@ -3,6 +3,12 @@ import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
+  const stats = [
+    { platform: "Spotify", plays: "1 234 567", icon: "Music", color: "text-green-400" },
+    { platform: "Яндекс.Музыка", plays: "892 341", icon: "Music2", color: "text-yellow-400" },
+    { platform: "VK Музыка", plays: "567 890", icon: "Music4", color: "text-blue-400" },
+  ];
+
   const links = {
     music: [
       { name: "Spotify", icon: "Music", url: "#", color: "hover:text-green-400" },
@@ -43,6 +49,30 @@ const Index = () => {
             Рок-группа • Все наши ссылки
           </p>
         </div>
+
+        <section className="mb-12 animate-fade-in" style={{ animationDelay: '0.05s', animationFillMode: 'both' }}>
+          <h2 className="text-2xl font-montserrat font-bold mb-4 flex items-center gap-2 justify-center">
+            <Icon name="TrendingUp" size={28} />
+            Статистика прослушиваний
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {stats.map((stat, index) => (
+              <Card 
+                key={index}
+                className="p-6 bg-card/60 backdrop-blur-md border-border hover:bg-card/80 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+              >
+                <div className="text-center space-y-2">
+                  <Icon name={stat.icon as any} size={32} className={`mx-auto ${stat.color}`} />
+                  <p className="text-sm text-muted-foreground font-medium">{stat.platform}</p>
+                  <p className="text-3xl font-montserrat font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    {stat.plays}
+                  </p>
+                  <p className="text-xs text-muted-foreground">прослушиваний</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
 
         <div className="space-y-8">
           <section className="animate-fade-in" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
