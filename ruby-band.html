@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUBY - Рок-группа</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            scroll-snap-align: start;
+        }
+
+        .bg-image {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 768px;
+            width: 100%;
+            padding: 64px 16px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 144px;
+            font-weight: 900;
+            text-align: center;
+            background: linear-gradient(to right, #e11d48, #f97316, #e11d48);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 24px;
+            color: #a1a1aa;
+            margin-bottom: 64px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: rgba(39, 39, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(39, 39, 42, 0.8);
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(225, 29, 72, 0.2);
+        }
+
+        .stat-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .stat-platform {
+            font-size: 14px;
+            color: #a1a1aa;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(to right, #e11d48, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #a1a1aa;
+        }
+
+        .links-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .link-card {
+            background: rgba(39, 39, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .link-card:hover {
+            background: rgba(39, 39, 42, 0.8);
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(225, 29, 72, 0.2);
+        }
+
+        .link-icon {
+            font-size: 32px;
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            margin-top: 32px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        footer {
+            margin-top: 64px;
+            text-align: center;
+            color: #a1a1aa;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 72px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section id="hero">
+        <div class="bg-image" style="background-image: url('https://cdn.poehali.dev/projects/396fa848-07f9-403f-a4dc-f5c4abbf124e/files/b38096e5-5704-43cf-806a-08af8857bd27.jpg');"></div>
+        <div class="bg-overlay"></div>
+        
+        <div class="container">
+            <h1>RUBY</h1>
+            <p class="subtitle">Рок-группа • Все наши ссылки</p>
+
+            <h2 class="section-title">
+                📈 Статистика прослушиваний
+            </h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #22c55e;">🎵</div>
+                    <p class="stat-platform">Spotify</p>
+                    <p class="stat-number">1 234 567</p>
+                    <p class="stat-label">прослушиваний</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #eab308;">🎵</div>
+                    <p class="stat-platform">Яндекс.Музыка</p>
+                    <p class="stat-number">892 341</p>
+                    <p class="stat-label">прослушиваний</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #3b82f6;">🎵</div>
+                    <p class="stat-platform">VK Музыка</p>
+                    <p class="stat-number">567 890</p>
+                    <p class="stat-label">прослушиваний</p>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span style="font-size: 32px; color: #a1a1aa;">↓</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- МУЗЫКА -->
+    <section id="music">
+        <div class="bg-image" style="background-image: url('https://cdn.poehali.dev/projects/396fa848-07f9-403f-a4dc-f5c4abbf124e/files/a27d436d-54d7-4dd4-88c7-88e3cc046a53.jpg');"></div>
+        <div class="bg-overlay"></div>
+        
+        <div class="container">
+            <h2 class="section-title">
+                🎵 Музыка
+            </h2>
+
+            <div class="links-grid">
+                <a href="#" class="link-card">
+                    <span class="link-icon" style="color: #22c55e;">🎵</span>
+                    <span>Spotify</span>
+                </a>
+
+                <a href="#" class="link-card">
+                    <span class="link-icon" style="color: #ec4899;">🎵</span>
+                    <span>Apple Music</span>
+                </a>
+
+                <a href="#" class="link-card">
+                    <span class="link-icon" style="color: #ef4444;">▶️</span>
+                    <span>YouTube Music</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- СОЦСЕТИ -->
+    <section id="social">
+        <div class="bg-image" style="background-image: url('https://cdn.poehali.dev/projects/396fa848-07f9-403f-a4dc-f5c4abbf124e/files/53db2a1f-65c0-4b30-9784-fb5b0120e72a.jpg');"></div>
+        <div class="bg-overlay"></div>
+        
+        <div class="container">
+            <h2 class="section-title">
+                📱 Соцсети
+            </h2>
+
+            <div class="links-grid">
+                <a href="#" class="link-card">
+                    <span class="link-icon" style="color: #ec4899;">📷</span>
+                    <span>Instagram</span>
+                </a>
+
+                <a href="#" class="link-card">
+                    <span class="link-icon" style="color: #3b82f6;">🌐</span>
+                    <span>VK</span>
+                </a>
+
+                <a href="#" class="link-card">
+                    <span class="link-icon" style="color: #0ea5e9;">✈️</span>
+                    <span>Telegram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ВИДЕО -->
+    <section id="video">
+        <div class="bg-image" style="background-image: url('https://cdn.poehali.dev/projects/396fa848-07f9-403f-a4dc-f5c4abbf124e/files/0ae46d4c-ecd4-4b47-8d43-8c26f3d5e188.jpg');"></div>
+        <div class="bg-overlay"></div>
+        
+        <div class="container">
+            <h2 class="section-title">
+                🎬 Видео
+            </h2>
+
+            <div class="links-grid">
+                <a href="#" class="link-card">
+                    <span class="link-icon" style="color: #ef4444;">▶️</span>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНЦЕРТЫ -->
+    <section id="concerts">
+        <div class="bg-image" style="background-image: url('https://cdn.poehali.dev/projects/396fa848-07f9-403f-a4dc-f5c4abbf124e/files/a58322ed-19a2-414f-b7fc-92b1f369528b.jpg');"></div>
+        <div class="bg-overlay"></div>
+        
+        <div class="container">
+            <h2 class="section-title">
+                🎤 Концерты
+            </h2>
+
+            <div class="links-grid">
+                <a href="#" class="link-card">
+                    <span class="link-icon" style="color: #e11d48;">📅</span>
+                    <span>Расписание концертов</span>
+                </a>
+
+                <a href="#" class="link-card">
+                    <span class="link-icon" style="color: #f97316;">🎫</span>
+                    <span>Купить билеты</span>
+                </a>
+            </div>
+
+            <footer>
+                <p>© 2024 RUBY • Рок-группа</p>
+            </footer>
+        </div>
+    </section>
+
+</body>
+</html>
