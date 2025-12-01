@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUBY - Рок-группа</title>
+    
+    <!-- Подключение шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Подключение файла со стилями -->
+    <link rel="stylesheet" href="ruby-styles.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- ГЛАВНЫЙ ЭКРАН - ЛОГОТИП И СТАТИСТИКА -->
+    <!-- ============================================ -->
+    <section id="hero">
+        <!-- Фоновое изображение -->
+        <div class="bg-image" style="background-image: url('https://cdn.poehali.dev/projects/396fa848-07f9-403f-a4dc-f5c4abbf124e/files/b38096e5-5704-43cf-806a-08af8857bd27.jpg');"></div>
+        <div class="bg-overlay"></div>
+        
+        <div class="container">
+            <!-- Название группы - меняй текст здесь -->
+            <h1>RUBY</h1>
+            
+            <!-- Подзаголовок - меняй текст здесь -->
+            <p class="subtitle">Рок-группа • Все наши ссылки</p>
+
+            <!-- Заголовок секции статистики -->
+            <h2 class="section-title">
+                📈 Статистика прослушиваний
+            </h2>
+
+            <!-- Карточки со статистикой -->
+            <div class="stats-grid">
+                <!-- Карточка Spotify -->
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #22c55e;">🎵</div>
+                    <p class="stat-platform">Spotify</p>
+                    <p class="stat-number">1 234 567</p>
+                    <p class="stat-label">прослушиваний</p>
+                </div>
+
+                <!-- Карточка Яндекс.Музыка -->
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #eab308;">🎵</div>
+                    <p class="stat-platform">Яндекс.Музыка</p>
+                    <p class="stat-number">892 341</p>
+                    <p class="stat-label">прослушиваний</p>
+                </div>
+
+                <!-- Карточка VK Музыка -->
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #3b82f6;">🎵</div>
+                    <p class="stat-platform">VK Музыка</p>
+                    <p class="stat-number">567 890</p>
+                    <p class="stat-label">прослушиваний</p>
+                </div>
+            </div>
+
+            <!-- Индикатор прокрутки вниз -->
+            <div class="scroll-indicator">
+                <span style="font-size: 32px; color: #a1a1aa;">↓</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- СЕКЦИЯ МУЗЫКА - ССЫЛКИ НА ПЛАТФОРМЫ -->
+    <!-- ============================================ -->
+    <section id="music">
+        <!-- Фоновое изображение -->
+        <div class="bg-image" style="background-image: url('https://cdn.poehali.dev/projects/396fa848-07f9-403f-a4dc-f5c4abbf124e/files/a27d436d-54d7-4dd4-88c7-88e3cc046a53.jpg');"></div>
+        <div class="bg-overlay"></div>
+        
+        <div class="container">
+            <h2 class="section-title">
+                🎵 Музыка
+            </h2>
+
+            <div class="links-grid">
+                <!-- Ссылка на Spotify - вставь свою ссылку в href="" -->
+                <a href="https://open.spotify.com/artist/ВАШ_ID" class="link-card">
+                    <span class="link-icon" style="color: #22c55e;">🎵</span>
+                    <span>Spotify</span>
+                </a>
+
+                <!-- Ссылка на Apple Music - вставь свою ссылку в href="" -->
+                <a href="https://music.apple.com/ru/artist/ВАШ_ID" class="link-card">
+                    <span class="link-icon" style="color: #ec4899;">🎵</span>
+                    <span>Apple Music</span>
+                </a>
+
+                <!-- Ссылка на YouTube Music - вставь свою ссылку в href="" -->
+                <a href="https://music.youtube.com/channel/ВАШ_ID" class="link-card">
+                    <span class="link-icon" style="color: #ef4444;">▶️</span>
+                    <span>YouTube Music</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- СЕКЦИЯ СОЦСЕТИ - ССЫЛКИ НА СОЦ. СЕТИ -->
+    <!-- ============================================ -->
+    <section id="social">
+        <!-- Фоновое изображение -->
+        <div class="bg-image" style="background-image: url('https://cdn.poehali.dev/projects/396fa848-07f9-403f-a4dc-f5c4abbf124e/files/53db2a1f-65c0-4b30-9784-fb5b0120e72a.jpg');"></div>
+        <div class="bg-overlay"></div>
+        
+        <div class="container">
+            <h2 class="section-title">
+                📱 Соцсети
+            </h2>
+
+            <div class="links-grid">
+                <!-- Ссылка на Instagram - вставь свою ссылку в href="" -->
+                <a href="https://instagram.com/ВАШ_АККАУНТ" class="link-card">
+                    <span class="link-icon" style="color: #ec4899;">📷</span>
+                    <span>Instagram</span>
+                </a>
+
+                <!-- Ссылка на VK - вставь свою ссылку в href="" -->
+                <a href="https://vk.com/ВАШ_АККАУНТ" class="link-card">
+                    <span class="link-icon" style="color: #3b82f6;">🌐</span>
+                    <span>VK</span>
+                </a>
+
+                <!-- Ссылка на Telegram - вставь свою ссылку в href="" -->
+                <a href="https://t.me/ВАШ_КАНАЛ" class="link-card">
+                    <span class="link-icon" style="color: #0ea5e9;">✈️</span>
+                    <span>Telegram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- СЕКЦИЯ ВИДЕО - ССЫЛКИ НА ВИДЕО -->
+    <!-- ============================================ -->
+    <section id="video">
+        <!-- Фоновое изображение -->
+        <div class="bg-image" style="background-image: url('https://cdn.poehali.dev/projects/396fa848-07f9-403f-a4dc-f5c4abbf124e/files/0ae46d4c-ecd4-4b47-8d43-8c26f3d5e188.jpg');"></div>
+        <div class="bg-overlay"></div>
+        
+        <div class="container">
+            <h2 class="section-title">
+                🎬 Видео
+            </h2>
+
+            <div class="links-grid">
+                <!-- Ссылка на YouTube - вставь свою ссылку в href="" -->
+                <a href="https://youtube.com/@ВАШ_КАНАЛ" class="link-card">
+                    <span class="link-icon" style="color: #ef4444;">▶️</span>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- СЕКЦИЯ КОНЦЕРТЫ - РАСПИСАНИЕ И БИЛЕТЫ -->
+    <!-- ============================================ -->
+    <section id="concerts">
+        <!-- Фоновое изображение -->
+        <div class="bg-image" style="background-image: url('https://cdn.poehali.dev/projects/396fa848-07f9-403f-a4dc-f5c4abbf124e/files/a58322ed-19a2-414f-b7fc-92b1f369528b.jpg');"></div>
+        <div class="bg-overlay"></div>
+        
+        <div class="container">
+            <h2 class="section-title">
+                🎤 Концерты
+            </h2>
+
+            <div class="links-grid">
+                <!-- Ссылка на расписание концертов - вставь свою ссылку в href="" -->
+                <a href="https://ваш-сайт.ru/concerts" class="link-card">
+                    <span class="link-icon" style="color: #e11d48;">📅</span>
+                    <span>Расписание концертов</span>
+                </a>
+
+                <!-- Ссылка на покупку билетов - вставь свою ссылку в href="" -->
+                <a href="https://kassir.ru/ВАШ_ИСПОЛНИТЕЛЬ" class="link-card">
+                    <span class="link-icon" style="color: #f97316;">🎫</span>
+                    <span>Купить билеты</span>
+                </a>
+            </div>
+
+            <!-- Подвал сайта -->
+            <footer>
+                <p>© 2024 RUBY • Рок-группа</p>
+            </footer>
+        </div>
+    </section>
+
+</body>
+</html>
